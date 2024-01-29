@@ -13,7 +13,7 @@ void mostrar(string &x)
 }
 int main()
 {
-    string hola="dimesd", x;
+    string hola="dime", x;
     x = hola;
     cout << " La cadena antes de la modificacion es " << x << endl;
     mostrar(x);

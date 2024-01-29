@@ -29,7 +29,7 @@ int main()
     for (const alumnos& estudiantes :cantidad_de_estudiantes) {
     cout << "\nNombre: " << estudiantes.nombre;
     cout << "\nEdad: " << estudiantes.edad;
-    cout << "\nCalificacion: " << estudiantes.calificacion << "\n";
+    cout << "\nCalificacio  n: " << estudiantes.calificacion << "\n";
 }
 
     return 0;
