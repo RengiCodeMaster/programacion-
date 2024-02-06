@@ -8,4 +8,4 @@ int main()
     int e=d>>d;
     cout<<e;
     return 0;
-}
+} 
