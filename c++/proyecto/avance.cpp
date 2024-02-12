@@ -29,7 +29,7 @@ void mostrar_laboratorios(vector<Laboratorios> &laboratorios_disponibles)
     for (int i = 0; i < laboratorios_disponibles.size(); ++i)
     {
         cout << i + 1 << ". Nombre: " << laboratorios_disponibles[i].nombre_de_laboratorio << endl
-            << "   Encargado: " << laboratorios_disponibles[i].encargado_del_laboratorio << "\n";
+                << "   Encargado: " << laboratorios_disponibles[i].encargado_del_laboratorio << "\n";
     }
     cout << "\033[0m";
 }
@@ -50,7 +50,7 @@ void Mostrar_insumos(vector<Materiales_delaboratorio> &insumos)
 void Mostrar_equipos(vector<Equipos> &cantidad_de_equipo)
 {
     cout << "\033[1;32m";
-    cout << "\n****USTED AÑADIO LO SIGUIENTE AL LABORATORIO****\n";
+    cout << "\n****USTED AGREGADO LO SIGUIENTE AL LABORATORIO****\n";
     cout << "\033[0m";
     cout << "\033[1;37m";
     for (const Equipos &equipos : cantidad_de_equipo)
@@ -126,6 +126,7 @@ void agregar_laboratorios(vector<Laboratorios> &laboratorios_disponibles)
 }
 void salir()
 {
+    
     exit(0);
 }
 int main()
@@ -146,7 +147,7 @@ int main()
         cout << "\n1.Agregar insumos a un laboratorio" << endl;
         cout << "\n2.Agregar equipos a un laboratorio" << endl;
         cout << "\n3.Agregar un laboratorio nuevo" << endl;
-        cout << "\n4.Salir ser comun y silvestre" << endl;
+        cout << "\n4.Salir del sistema" << endl;
         cout << "\nIngrese la opcion: ";
         cout << "\033[0m";
         cin >> option;
@@ -171,24 +172,16 @@ int main()
                 cout << "\n****BIENVENIDO AL LABORATORIO DE CARNES****\n";
                 cout << "\033[0m";
                 agregar_insumos(insumos);
-
                 int presiona;
-                cout << "PRESIONE 1 PARA MOSTRAR LO AGREGADO   :  ";
-                cin >> presiona;
-                switch (presiona)
+                while (presiona != 1)
                 {
-                case 1:
-                    system("cls");
-                    Mostrar_insumos(insumos);
-                    break;
-                default:
-                    system("cls");
-                    cout << "\033[1;31m";
-                    cout << "\n**** Opcion no valida ****\n";
+                    cout << "\033[1;37m";
+                    cout << "PRESIONE 1 PARA MOSTRAR LO AGREGADO   :  ";
+                    cin >> presiona;
                     cout << "\033[0m";
-                    break;
                 }
-
+                system("cls");
+                Mostrar_insumos(insumos);
                 break;
             case 2:
                 system("cls");
@@ -199,7 +192,17 @@ int main()
                 cout << "\n\n****BIENVENIDO AL LABORATORIO DE FISICA****\n";
                 cout << "\033[0m";
                 agregar_insumos(insumos);
-                cout << "\nPresione 1 para mostar lo agregado\n";
+                int presiona1;
+                while (presiona1 != 1)
+                {
+                    cout << "\033[1;37m";
+                    cout << "PRESIONE 1 PARA MOSTRAR LO AGREGADO   :  ";
+                    cin >> presiona1;
+                    cout << "\033[0m";
+                }
+                system("cls");
+                Mostrar_insumos(insumos);
+                break;
             }
             break;
         case 2:
@@ -221,6 +224,17 @@ int main()
                 cout << "\n****BIENVENIDO AL LABORATORIO DE CARNES****\n";
                 cout << "\033[0m";
                 agregar_equipos(cantidad_de_equipos);
+                int presiona;
+                while (presiona != 2)
+                {
+                    cout << "\033[1;37m";
+                    cout << "PRESIONE 2 PARA MOSTRAR LO AGREGADO   :  ";
+                    cin >> presiona;
+                    cout << "\033[0m";
+                    
+                }
+                system("cls");
+                Mostrar_equipos(cantidad_de_equipos);
                 break;
             case 2:
                 system("cls");
@@ -231,6 +245,16 @@ int main()
                 cout << "\n****BIENVENIDO AL LABORATORIO DE FISICA****\n";
                 cout << "\033[0m";
                 agregar_equipos(cantidad_de_equipos);
+                int presiona1;
+                while (presiona1 != 2)
+                {
+                    cout << "\033[1;37m";
+                    cout << "PRESIONE 2 PARA MOSTRAR LO AGREGADO   :  ";
+                    cin >> presiona1;
+                    cout << "\033[0m";
+                }
+                system("cls");
+                Mostrar_equipos(cantidad_de_equipos);
                 break;
             }
             break;

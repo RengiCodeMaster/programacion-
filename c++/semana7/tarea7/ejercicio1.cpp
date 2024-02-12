@@ -8,7 +8,7 @@ int duplicado(int a = 0)
 {
     return 2 * a;
 }
-int dato()
+int dato()  
 {
     int r;
     cout << "\nIngrese el numero: ";

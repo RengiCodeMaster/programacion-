@@ -7,7 +7,9 @@ int main(void)
         i++;
     if (i > j || j > i)
         j++;
-        if(i|j)
+    if (i | j)
+        i++;
+    if (i & j)
         j++;
     cout << i * j << endl;
 

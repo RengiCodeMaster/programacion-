@@ -19,18 +19,19 @@ int main()
         alumnos estudiantes;
         cout << "\nIngrese el nombre del estudiante " << i + 1 << ": ";
         cin >> estudiantes.nombre;
-        cout << "\nIngrese la edad del estudiante " << i + 1 << ": ";
+        cout << "\nIngrese la edad del estudiante " << estudiantes.nombre << ": ";
         cin >> estudiantes.edad;
-        cout << "\nIngrese la calificacion del estudiante " << i + 1 << ": ";
+        cout << "\nIngrese la calificacion del estudiante " << estudiantes.nombre << ": ";
         cin >> estudiantes.calificacion;
         cantidad_de_estudiantes.push_back(estudiantes);
     }
     cout << "\nInformacion de los  Estudiantes:\n";
-    for (const alumnos& estudiantes :cantidad_de_estudiantes) {
-    cout << "\nNombre: " << estudiantes.nombre;
-    cout << "\nEdad: " << estudiantes.edad;
-    cout << "\nCalificacio  n: " << estudiantes.calificacion << "\n";
-}
+    for (const alumnos& estudiantes : cantidad_de_estudiantes)
+    {
+        cout << "\nNombre: " << estudiantes.nombre;
+        cout << "\nEdad: " << estudiantes.edad;
+        cout << "\nCalificacion: " << estudiantes.calificacion << "\n";
+    }
 
     return 0;
 }
