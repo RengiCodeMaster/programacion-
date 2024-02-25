@@ -62,9 +62,8 @@ class Registro_de_empleados
 };
 main()
 {
-    Registro_de_empleados *a=new Registro_de_empleados;
-    a->Registro();
-    a->mostrar();   
-    delete a;
+    Registro_de_empleados a;
+    a.Registro();
+    a.mostrar();   
     return 0;
 }
