@@ -11,36 +11,38 @@ Finalmente, en la función main, crea una instancia de "Registro_de_empleados" y
 "registro_de_empleados()".
 */
 #include <iostream>
-#include<vector>
+#include <vector>
 using namespace std;
 class Registro_de_empleados
 {
+private:
     struct Empleado
     {
         string nombre;
-        vector<int>horas;
+        vector<int> horas;
     };
-    vector<Empleado>empleados;
-    public:
-    Registro_de_empleados(){}
+    vector<Empleado> empleados;
+
+public:
+    Registro_de_empleados() {}
     virtual void Registro()
     {
         int x;
         int z;
-        cout<<"Ingrese el numero de empleados que desea registrar: ";
-        cin>>x;
-        cout<<"Ingrese el numero de Dias trabajados: ";
-        cin>>z;
-        for(int i=0;i<x;i++)
+        cout << "Ingrese el numero de empleados que desea registrar: ";
+        cin >> x;
+        cout << "Ingrese el numero de Dias trabajados: ";
+        cin >> z;
+        for (int i = 0; i < x; i++)
         {
             Empleado agregar;
-            cout<<"Ingrese el nombre del empleado "<< i+1 <<": ";
-            cin>>agregar.nombre;
-            for(int j=0;j<z;j++)
+            cout << "Ingrese el nombre del empleado " << i + 1 << ": ";
+            cin >> agregar.nombre;
+            for (int j = 0; j < z; j++)
             {
                 int h;
-                cout<<"Ingrese la hora trabajada "<<j+1<<" por "<< agregar.nombre <<": ";
-                cin>>h;
+                cout << "Ingrese la hora trabajada " << j + 1 << " por " << agregar.nombre << ": ";
+                cin >> h;
                 agregar.horas.push_back(h);
             }
             empleados.push_back(agregar);
@@ -48,11 +50,11 @@ class Registro_de_empleados
     }
     void mostrar()
     {
-        for(const auto& empleado : empleados)
+        for (const auto &empleado : empleados)
         {
             cout << "Nombre del empleado: " << empleado.nombre << endl;
             cout << "Horas trabajadas por dia: ";
-            for(const auto& horas : empleado.horas)
+            for (const auto &horas : empleado.horas)
             {
                 cout << horas << " ";
             }
@@ -64,6 +66,6 @@ main()
 {
     Registro_de_empleados a;
     a.Registro();
-    a.mostrar();   
+    a.mostrar();
     return 0;
 }
