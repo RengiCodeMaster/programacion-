@@ -59,9 +59,17 @@ public:
 int main()
 {
 
-    Vehiculo *vehiculos=new Automovil("toyota","corrlla",2024,4);
-    vehiculos->mostrarDatos();
-    vehiculos->sonido();
-    delete vehiculos;
+    Vehiculo *vehi[2];
+    vehi[0]=new Automovil("toyota","yaris",2017,4);
+    vehi[1]=new Motocicleta("yamaha","mt09",2023,"deportiva");
+    for(int i=0;i<2;i++)
+    {
+        vehi[i]->mostrarDatos();
+        vehi[i]->sonido();
+    }
+    for(int i=0;i<2;i++)
+    {
+        delete vehi[i];
+    }
     return 0;
 }
